@@ -1,6 +1,29 @@
 import Slider from "./Slider";
 
 function PriceComponent() {
+  function handleClick(e) {
+    e.preventDefault();
+
+    const node = e.target.closest(".plan");
+    if (!node) {
+      console.log(e.target, node);
+      return;
+    }
+    if (node.classList.contains("bg-light-grayish-blue-bg")) {
+      node.classList.remove("bg-light-grayish-blue-bg");
+      node.classList.add("bg-[#7aeadf]");
+
+      node.children[0].classList.remove("left-[4px]");
+      node.children[0].classList.add("right-[4px]");
+    } else {
+      node.classList.remove("bg-[#7aeadf]");
+      node.classList.add("bg-light-grayish-blue-bg");
+
+      node.children[0].classList.remove("right-[4px]");
+      node.children[0].classList.add("left-[4px]");
+    }
+  }
+
   return (
     <div className="min-w-[375px] relative bg-white rounded-md overflow-hidden h-screen w-full">
       <div className="min-h-[400px] relative px-6 flex flex-col items-center text-center max-h-[400px] bg-[url('/bg-pattern.svg')]">
@@ -20,7 +43,7 @@ function PriceComponent() {
         </p>
       </div>
 
-      <div className="bg-white absolute top-[230px] lg:top-[265px] w-4/5 flex flex-col items-center h-full right-1/2 translate-x-1/2 rounded-md pt-7 gap-7 lg:gap-10 min-w-[327px] max-w-[540px] max-h-[478px] lg:max-h-[397px] shadow-[0_20px_30px_-5px_rgba(0,0,0,0.1521)]">
+      <div className="bg-white absolute top-[230px] lg:top-[265px] w-4/5 flex flex-col items-center h-full right-1/2 translate-x-1/2 rounded-md pt-10 gap-7 lg:gap-10 min-w-[327px] max-w-[540px] max-h-[478px] lg:max-h-[397px] shadow-[0_20px_30px_-5px_rgba(0,0,0,0.1521)]">
         <div className="flex flex-col w-full items-center gap-3 lg:flex-row lg:relative lg:justify-around lg:mb-10">
           <h2 className="uppercase text-grayish-blue text-[12px] tracking-[1.71px] lg:text-sm lg:tracking-[2px]">
             100k Pageviews
@@ -42,14 +65,20 @@ function PriceComponent() {
           <p className="text-grayish-blue text-[12px] font-semibold">
             Monthly Billing
           </p>
-          <div className="bg-light-grayish-blue-bg w-11 h-5 rounded-2xl relative mx-1">
+          <div
+            className="bg-light-grayish-blue-bg w-11 h-5 rounded-2xl relative mx-1 plan"
+            onClick={handleClick}
+          >
             <span className="h-[14px] w-[14px] bg-white absolute top-[2.5px] left-[4px] rounded-full"></span>
           </div>
           <p className="text-grayish-blue text-[12px] font-semibold">
             Yearly Billing
           </p>
-          <span className="text-[10px] text-[#ff8d68] bg-[#feede8] py-[2px] px-2 rounded-2xl font-extrabold">
+          <span className="text-[10px] text-[#ff8d68] bg-[#feede8] py-[2px] px-2 rounded-2xl font-extrabold hidden lg:inline">
             25% discount
+          </span>
+          <span className="text-[10px] text-[#ff8d68] bg-[#feede8] py-[2px] px-2 rounded-2xl font-extrabold lg:hidden">
+            -25%
           </span>
         </div>
 

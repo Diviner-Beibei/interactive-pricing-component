@@ -39,4 +39,9 @@
     cursor: pointer; /* Change cursor on hover */
     margin-top: -18px;
   }
+
+  #slider:hover::-webkit-slider-thumb {
+    background: no-repeat center, #24aea1;
+    background-image: url("./icon-slider.svg");
+  }
 }
