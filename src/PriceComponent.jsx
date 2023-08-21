@@ -20,7 +20,7 @@ function PriceComponent() {
         </p>
       </div>
 
-      <div className="bg-white absolute top-[230px] lg:top-[250px] w-4/5 flex flex-col items-center h-full right-1/2 translate-x-1/2 rounded-md pt-7 gap-7 lg:gap-10 min-w-[327px] max-w-[540px] max-h-[478px] lg:max-h-[397px] shadow-[0_20px_30px_-5px_rgba(0,0,0,0.1521)]">
+      <div className="bg-white absolute top-[230px] lg:top-[265px] w-4/5 flex flex-col items-center h-full right-1/2 translate-x-1/2 rounded-md pt-7 gap-7 lg:gap-10 min-w-[327px] max-w-[540px] max-h-[478px] lg:max-h-[397px] shadow-[0_20px_30px_-5px_rgba(0,0,0,0.1521)]">
         <div className="flex flex-col w-full items-center gap-3 lg:flex-row lg:relative lg:justify-around lg:mb-10">
           <h2 className="uppercase text-grayish-blue text-[12px] tracking-[1.71px] lg:text-sm lg:tracking-[2px]">
             100k Pageviews
@@ -49,7 +49,7 @@ function PriceComponent() {
             Yearly Billing
           </p>
           <span className="text-[10px] text-[#ff8d68] bg-[#feede8] py-[2px] px-2 rounded-2xl font-extrabold">
-            -25%
+            25% discount
           </span>
         </div>
 

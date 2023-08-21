@@ -10,7 +10,9 @@ function Slider() {
   return (
     <div className="lg:absolute lg:top-14 lg:lg:w-[444px]">
       {/* <div className="bg-[#979797] h-2 w-full rounded-md absolute top-1 left-0"></div> */}
-      <label htmlFor="slider"></label>
+      <label htmlFor="slider" hidden>
+        Price
+      </label>
       <input
         type="range"
         id="slider"
