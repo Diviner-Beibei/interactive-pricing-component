@@ -31,7 +31,7 @@
   height: 40px;
 
   background: no-repeat center, #10d8c4;
-  background-image: url("icon-slider.svg");
+  background-image: url("./icon-slider.svg");
   border-radius: 50%;
   box-shadow: 0px 15px 30px 0px rgba(0, 255, 231, 0.6);
 

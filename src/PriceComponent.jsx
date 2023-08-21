@@ -10,9 +10,9 @@ function PriceComponent() {
         <img
           src="./pattern-circles.svg"
           alt=""
-          className="absolute top-12 right-1/2 translate-x-1/2"
+          className="absolute top-12 lg:top-16 right-1/2 translate-x-1/2"
         />
-        <h1 className="font-extrabold text-xl z-10 mt-[82px] lg:mt-[92px] lg:text-[28px]">
+        <h1 className="font-extrabold text-xl z-10 mt-[82px] lg:mt-[108px] lg:text-[28px]">
           Simple, traffic-based pricing
         </h1>
         <p className="text-[13px] text-grayish-blue z-10 max-w-[11.5rem] mt-2 lg:mt-4 leading-6 lg:text-[15px] lg:max-w-none">
