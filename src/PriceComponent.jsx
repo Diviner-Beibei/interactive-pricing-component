@@ -44,7 +44,7 @@ function PriceComponent() {
       </div>
 
       <div className="bg-white absolute top-[230px] lg:top-[265px] w-4/5 flex flex-col items-center h-full right-1/2 translate-x-1/2 rounded-md pt-10 gap-7 lg:gap-10 min-w-[327px] max-w-[540px] max-h-[478px] lg:max-h-[397px] shadow-[0_20px_30px_-5px_rgba(0,0,0,0.1521)]">
-        <div className="flex flex-col w-full items-center gap-3 lg:flex-row lg:relative lg:justify-around lg:mb-10">
+        <div className="flex flex-col w-full items-center gap-3 lg:flex-row lg:relative lg:justify-around lg:mb-12">
           <h2 className="uppercase text-grayish-blue text-[12px] tracking-[1.71px] lg:text-sm lg:tracking-[2px]">
             100k Pageviews
           </h2>
@@ -85,7 +85,7 @@ function PriceComponent() {
         <div className="bg-grayish-blue h-[1px] opacity-30 w-full"></div>
 
         <div className="flex flex-col gap-8 lg:flex-row lg:justify-around lg:gap-0 lg:w-full lg:items-center">
-          <ul className="flex flex-col gap-2 place-items-center text-grayish-blue">
+          <ul className="flex flex-col gap-2 place-items-center lg:place-items-start text-grayish-blue">
             <li className="flex gap-3 items-center">
               <svg xmlns="http://www.w3.org/2000/svg" width="9" height="8">
                 <path
