@@ -1,6 +1,11 @@
+import { useState } from "react";
 import Slider from "./Slider";
 
 function PriceComponent() {
+  const [isYearly, setIsYearly] = useState(false);
+  const [amount, setAmount] = useState(16);
+  const [view, setView] = useState("100K");
+
   function handleClick(e) {
     e.preventDefault();
 
@@ -9,7 +14,7 @@ function PriceComponent() {
       console.log(e.target, node);
       return;
     }
-    if (node.classList.contains("bg-light-grayish-blue-bg")) {
+    if (!isYearly) {
       node.classList.remove("bg-light-grayish-blue-bg");
       node.classList.add("bg-[#7aeadf]");
 
@@ -21,6 +26,43 @@ function PriceComponent() {
 
       node.children[0].classList.remove("right-[4px]");
       node.children[0].classList.add("left-[4px]");
+    }
+
+    setIsYearly((isYearly) => !isYearly);
+  }
+
+  function onInput(rangeValue) {
+    // console.log(rangeValue);
+
+    function togglePrice(total) {
+      isYearly ? setAmount(total - total * 0.25) : setAmount(total);
+    }
+
+    function togglePageViews(tview) {
+      return rangeValue >= 36 ? setView(`${tview}M`) : setView(`${tview}K`);
+    }
+
+    switch (rangeValue) {
+      case "8":
+        togglePageViews(10);
+        togglePrice(8);
+        break;
+      case "12":
+        togglePageViews(50);
+        togglePrice(8);
+        break;
+      case "16":
+        togglePageViews(100);
+        togglePrice(16);
+        break;
+      case "24":
+        togglePageViews(500);
+        togglePrice(24);
+        break;
+      case "36":
+        togglePageViews(1);
+        togglePrice(36);
+        break;
     }
   }
 
@@ -46,14 +88,14 @@ function PriceComponent() {
       <div className="bg-white absolute top-[230px] lg:top-[265px] w-4/5 flex flex-col items-center h-full right-1/2 translate-x-1/2 rounded-md pt-10 gap-7 lg:gap-10 min-w-[327px] max-w-[540px] max-h-[478px] lg:max-h-[397px] shadow-[0_20px_30px_-5px_rgba(0,0,0,0.1521)]">
         <div className="flex flex-col w-full items-center gap-3 lg:flex-row lg:relative lg:justify-around lg:mb-12">
           <h2 className="uppercase text-grayish-blue text-[12px] tracking-[1.71px] lg:text-sm lg:tracking-[2px]">
-            100k Pageviews
+            {view} Pageviews
           </h2>
 
-          <Slider />
+          <Slider onInput={onInput} />
 
           <div className="flex items-center gap-2 mt-[-30px] lg:mt-0">
             <span className="text-[32px] font-extrabold tracking-[-0.8px] lg:text-[40px] lg:tracking-[-1px]">
-              $16.00
+              ${amount}.00
             </span>
             <span className="text-grayish-blue text-sm lg:text-base">
               /month
